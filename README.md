@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 Symfony Demo Application
 ========================
 
@@ -58,3 +59,7 @@ $ ./bin/phpunit
 [2]: https://symfony.com/doc/current/reference/requirements.html
 [3]: https://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html
 [4]: https://symfony.com/download
+=======
+# PruebaOMT
+DESAFÍO Desarrollador De PHP
+>>>>>>> 7bb6bcf21007c34c3dec02746df1a88b1d92060b
