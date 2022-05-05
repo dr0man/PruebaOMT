@@ -20,7 +20,10 @@ use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\PasswordHasher\Hasher\UserPasswordHasherInterface;
 use Symfony\Component\Routing\Annotation\Route;
-
+/* @IsGranted("ROLE_USER") fue necesario quitarlo para 
+   acceder a los servicios en este controlador.
+   Fue necesario agregarlo nuevamente para limitar el 
+   acceso a los usuarios no autorizados */
 /**
  * Controller used to manage current user.
  *

@@ -10,3 +10,27 @@ homepage:
     defaults:
         template: default/homepage.html.twig
         _locale: '%locale%'
+
+list_users:
+    path: /api/users
+    controller: App\Controller\wsUserController::getAllUsers
+    methods: [GET]
+    
+add_user:
+    path: /api/add/user
+    controller: App\Controller\wsUserController::addUser
+    methods: [POST]
+
+update_user:
+    path: /api/user/{userid}
+    controller: App\Controller\wsUserController::updateUser
+    methods: [PUT]
+    requirements:
+        userid: '\d+'
+
+delete_user:
+    path: /api/user/{id}
+    controller: App\Controller\wsUserController::deleteUser
+    methods: [DELETE]
+    requirements:
+        id: '\d+'

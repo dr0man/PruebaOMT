@@ -104,7 +104,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface
         return $this->getUserIdentifier();
     }
 
-    public function setUsername(string $username): void
+    public function setUserName(string $username): void
     {
         $this->username = $username;
     }
