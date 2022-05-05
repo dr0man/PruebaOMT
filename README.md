@@ -1,9 +1,9 @@
-<<<<<<< HEAD
-Symfony Demo Application
+Prueba OMT - Symfony
 ========================
 
-The "Symfony Demo Application" is a reference application created to show how
-to develop applications following the [Symfony Best Practices][1].
+This application has a hybrid behavior, it works as a web application and API REST.
+This application is based on ["Symfony Demo Application"][6] and is a reference 
+application created to show how to develop applications following the [Symfony Best Practices][1].
 
 Requirements
 ------------
@@ -15,18 +15,7 @@ Requirements
 Installation
 ------------
 
-[Download Symfony][4] to install the `symfony` binary on your computer and run
-this command:
-
-```bash
-$ symfony new --demo my_project
-```
-
-Alternatively, you can use Composer:
-
-```bash
-$ composer create-project symfony/symfony-demo my_project
-```
+[Download zip file][5] or clone this repo.
 
 Usage
 -----
@@ -45,6 +34,20 @@ If you don't have the Symfony binary installed, run `php -S localhost:8000 -t pu
 to use the built-in PHP web server or [configure a web server][3] like Nginx or
 Apache to run the application.
 
+You can acces API REST Web Services using the following:
+
+To list all users using GET method:
+http://localhost:8000/api/users
+
+To add new user using POST method:
+http://localhost:8000/api/add/user
+
+To update the information of the fourth user using the PUT method:
+http://localhost:8000/api/user/4
+
+To delete the fourth user using the DELETE method:
+http://localhost:8000/api/user/4
+
 Tests
 -----
 
@@ -59,7 +62,5 @@ $ ./bin/phpunit
 [2]: https://symfony.com/doc/current/reference/requirements.html
 [3]: https://symfony.com/doc/current/cookbook/configuration/web_server_configuration.html
 [4]: https://symfony.com/download
-=======
-# PruebaOMT
-DESAFÍO Desarrollador De PHP
->>>>>>> 7bb6bcf21007c34c3dec02746df1a88b1d92060b
+[5]: https://github.com/dr0man/PruebaOMT/archive/refs/heads/main.zip
+[6]: https://github.com/symfony/demo
