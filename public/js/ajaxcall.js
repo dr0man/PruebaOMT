@@ -7,8 +7,8 @@
 $('body').on('click', '.change-rol', function () { 
     var idRol = $(this).closest('tr').find('select option:selected').val();
     var idUser = $(this).attr('userId');
-    console.log(idRol);
-    console.log(idUser);
+    /* console.log(idRol);
+    console.log(idUser); */
 
     $.ajax({
         type: 'POST',

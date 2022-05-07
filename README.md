@@ -43,24 +43,20 @@ Apache to run the application.
 
 You can acces API REST Web Services using the following:
 
-To list all users using GET method:
+To list all users using GET method: <br/>
+http://localhost:8000/api/users <br/>
 
-http://localhost:8000/api/users
-
-To add new user using POST method:
-
+To add new user using POST method: <br/>
 http://localhost:8000/api/add/user
 
 <p align="center">
-<a href="javascript:;"><img src="https://platform.sh/images/deploy/lg-blue.svg" alt="Deploy on Platform.sh" width="180px" /></a>
+<a href="javascript:;"><img src="https://raw.githubusercontent.com/dr0man/PruebaOMT/main/public/img/WSAddUser.jpg" alt="Add new user" width="400px" /></a>
 </p>
 
-To update the information of the fourth registered user using the PUT method:
-
+To update the information of the fourth registered user using the PUT method: <br/>
 http://localhost:8000/api/user/4
 
-To delete the fourth registered user using the DELETE method:
-
+To delete the fourth registered user using the DELETE method: <br/>
 http://localhost:8000/api/user/4
 
 Tests
