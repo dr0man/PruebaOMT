@@ -34,3 +34,8 @@ delete_user:
     methods: [DELETE]
     requirements:
         id: '\d+'
+
+update_role:
+    path: /update_role
+    controller: App\Controller\wsUserController::updateRole
+    methods: [POST]

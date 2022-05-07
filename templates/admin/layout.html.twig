@@ -14,8 +14,23 @@
 
 {% block header_navigation_links %}
     <li>
+        <a href="{{ path('inventory_index') }}">
+            Inventory
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('accounting_index') }}">
+            Accounting
+        </a>
+    </li>
+    <li>
         <a href="{{ path('admin_post_index') }}">
             <i class="fa fa-list-alt" aria-hidden="true"></i> {{ 'menu.post_list'|trans }}
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('users_post_index') }}">
+            <i class="fa fa-list-alt" aria-hidden="true"></i> List Users
         </a>
     </li>
     <li>

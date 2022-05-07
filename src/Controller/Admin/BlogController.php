@@ -14,6 +14,7 @@ namespace App\Controller\Admin;
 use App\Entity\Post;
 use App\Form\PostType;
 use App\Repository\PostRepository;
+use App\Repository\UserRepository;
 use App\Security\PostVoter;
 use Doctrine\ORM\EntityManagerInterface;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
@@ -32,7 +33,7 @@ use Symfony\Component\Routing\Annotation\Route;
  *
  * See http://knpbundles.com/keyword/admin
  *
- * @Route("/admin/post")
+ * @Route("/admin/")
  * @IsGranted("ROLE_ADMIN")
  *
  * @author Ryan Weaver <weaverryan@gmail.com>
@@ -51,20 +52,42 @@ class BlogController extends AbstractController
      *     could move this annotation to any other controller while maintaining
      *     the route name and therefore, without breaking any existing link.
      *
-     * @Route("/", methods="GET", name="admin_index")
-     * @Route("/", methods="GET", name="admin_post_index")
+     * @Route("post", methods="GET", name="admin_index")
+     * @Route("post", methods="GET", name="admin_post_index")
      */
     public function index(PostRepository $posts): Response
     {
-        $authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        $roles = $this->getUser()->getRoles();
+
+        if (in_array("ROLE_USER", $roles, true)) {
+            // echo $roles[0];die;
+            $this->redirectToRoute('blog_index');
+        } else {
+            $authorPosts = $posts->findBy(['author' => $this->getUser()], ['publishedAt' => 'DESC']);
+        }
 
         return $this->render('admin/blog/index.html.twig', ['posts' => $authorPosts]);
     }
 
     /**
+     * Lists all Users. dRoman
+     *
+     * @Route("users", methods="GET", name="users_index")
+     * @Route("users", methods="GET", name="users_post_index")
+     */
+    public function listUsers(UserRepository $users): Response
+    {
+        $usersObj = $users->findAll();
+        // dump($usersObj);die;
+        return $this->render('admin/blog/users.html.twig', [
+            'users' => $usersObj
+        ]);
+    }
+
+    /**
      * Creates a new Post entity.
      *
-     * @Route("/new", methods="GET|POST", name="admin_post_new")
+     * @Route("post/new", methods="GET|POST", name="admin_post_new")
      *
      * NOTE: the Method annotation is optional, but it's a recommended practice
      * to constraint the HTTP methods each controller responds to (by default
@@ -111,7 +134,7 @@ class BlogController extends AbstractController
     /**
      * Finds and displays a Post entity.
      *
-     * @Route("/{id<\d+>}", methods="GET", name="admin_post_show")
+     * @Route("post/{id<\d+>}", methods="GET", name="admin_post_show")
      */
     public function show(Post $post): Response
     {
@@ -127,7 +150,7 @@ class BlogController extends AbstractController
     /**
      * Displays a form to edit an existing Post entity.
      *
-     * @Route("/{id<\d+>}/edit", methods="GET|POST", name="admin_post_edit")
+     * @Route("post/{id<\d+>}/edit", methods="GET|POST", name="admin_post_edit")
      * @IsGranted("edit", subject="post", message="Posts can only be edited by their authors.")
      */
     public function edit(Request $request, Post $post, EntityManagerInterface $entityManager): Response
@@ -151,7 +174,7 @@ class BlogController extends AbstractController
     /**
      * Deletes a Post entity.
      *
-     * @Route("/{id}/delete", methods="POST", name="admin_post_delete")
+     * @Route("post/{id}/delete", methods="POST", name="admin_post_delete")
      * @IsGranted("delete", subject="post")
      */
     public function delete(Request $request, Post $post, EntityManagerInterface $entityManager): Response

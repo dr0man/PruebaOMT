@@ -15,7 +15,14 @@ Requirements
 Installation
 ------------
 
-[Download zip file][5] or clone this repo.
+[Download zip file][5] or clone this repo and install 
+the dependencies with Composer. 
+
+```bash
+# make Composer install the project's dependencies into vendor
+cd my-project/
+composer install
+```
 
 Usage
 -----
@@ -37,15 +44,23 @@ Apache to run the application.
 You can acces API REST Web Services using the following:
 
 To list all users using GET method:
+
 http://localhost:8000/api/users
 
 To add new user using POST method:
+
 http://localhost:8000/api/add/user
 
-To update the information of the fourth user using the PUT method:
+<p align="center">
+<a href="javascript:;"><img src="https://platform.sh/images/deploy/lg-blue.svg" alt="Deploy on Platform.sh" width="180px" /></a>
+</p>
+
+To update the information of the fourth registered user using the PUT method:
+
 http://localhost:8000/api/user/4
 
-To delete the fourth user using the DELETE method:
+To delete the fourth registered user using the DELETE method:
+
 http://localhost:8000/api/user/4
 
 Tests
