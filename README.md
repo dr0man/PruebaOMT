@@ -41,23 +41,36 @@ If you don't have the Symfony binary installed, run `php -S localhost:8000 -t pu
 to use the built-in PHP web server or [configure a web server][3] like Nginx or
 Apache to run the application.
 
+For more documentation [Click Here.][7]
 You can acces API REST Web Services using the following:
 
 To list all users using GET method: <br/>
 http://localhost:8000/api/users <br/>
 
+<p align="center">
+<a href="javascript:;"><img src="https://raw.githubusercontent.com/dr0man/PruebaOMT/main/public/img/WSAllUsers.jpg" alt="list all users" width="800px" height="400" /></a>
+</p>
+
 To add new user using POST method: <br/>
 http://localhost:8000/api/add/user
 
 <p align="center">
-<a href="javascript:;"><img src="https://raw.githubusercontent.com/dr0man/PruebaOMT/main/public/img/WSAddUser.jpg" alt="Add new user" width="400px" /></a>
+<a href="javascript:;"><img src="https://raw.githubusercontent.com/dr0man/PruebaOMT/main/public/img/WSAddUser.jpg" alt="Add new user" width="800px" height="400" /></a>
 </p>
 
 To update the information of the fourth registered user using the PUT method: <br/>
 http://localhost:8000/api/user/4
 
+<p align="center">
+<a href="javascript:;"><img src="https://raw.githubusercontent.com/dr0man/PruebaOMT/main/public/img/WSUpdateUser.jpg" alt="Update user" width="800px" height="400" /></a>
+</p>
+
 To delete the fourth registered user using the DELETE method: <br/>
 http://localhost:8000/api/user/4
+
+<p align="center">
+<a href="javascript:;"><img src="https://raw.githubusercontent.com/dr0man/PruebaOMT/main/public/img/WSDeleteUser.jpg" alt="delete" width="800px" height="400" /></a>
+</p>
 
 Tests
 -----
@@ -75,3 +88,4 @@ $ ./bin/phpunit
 [4]: https://symfony.com/download
 [5]: https://github.com/dr0man/PruebaOMT/archive/refs/heads/main.zip
 [6]: https://github.com/symfony/demo
+[7]: https://github.com/dr0man/PruebaOMT/blob/main/public/uploads/Documentacion.pdf
