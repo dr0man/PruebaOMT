@@ -14,7 +14,7 @@ use Symfony\Component\Routing\Annotation\Route;
  * @package App\Controller
  *
  * @Route(path="/api")
- * esta mal especificada la ruta?
+ * esta mal especificada la ruta? prueba desde linux
  */
 class wsUserController extends AbstractController
 {
