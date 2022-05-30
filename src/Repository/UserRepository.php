@@ -14,8 +14,11 @@ use Doctrine\ORM\EntityManagerInterface;
  * @method User[]    findAll()
  * @method User[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class UserRepository extends ServiceEntityRepository
-{
+class UserRepository extends ServiceEntityRepository 
+{ /* Cuando se usa ServiceEntityRepository se debe crear tambien el constructor, el cual es util
+     cuando se desea inicializar una variable que se va a usar en toda la clase. Es probable que
+     deba crear el constructor en las clases que llamen a una funcion en la clase actual.
+     Use EntityRepository cuando no requiera de usar la funcion constructora __construct */
     public function __construct(ManagerRegistry $registry,EntityManagerInterface $manager)
     {
         parent::__construct($registry, User::class);
